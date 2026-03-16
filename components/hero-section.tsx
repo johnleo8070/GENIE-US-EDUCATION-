@@ -71,6 +71,7 @@ export function HeroSection() {
                   src={videoSrc}
                   className="w-full aspect-[16/9] md:aspect-[21/10] lg:aspect-[21/9] object-cover"
                   autoPlay
+                  muted
                   controls={false}
                   playsInline
                   onEnded={() => setIsVideoFinished(true)}
