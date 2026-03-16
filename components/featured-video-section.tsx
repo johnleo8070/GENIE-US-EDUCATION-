@@ -6,7 +6,7 @@ import { Play, Sparkles } from "lucide-react"
 export function FeaturedVideoSection() {
   // Replace this with your actual video path when ready
   // Example: const videoSrc = "/videos/professor-panda-intro.mp4"
-  const videoSrc: string | null = null
+  const videoSrc = "/videos/genie-us.mp4"
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-[#FFF8E7] to-white relative overflow-hidden">
@@ -14,7 +14,7 @@ export function FeaturedVideoSection() {
       <div className="absolute top-10 left-10 w-20 h-20 bg-[#F97316]/10 rounded-full blur-2xl" />
       <div className="absolute bottom-10 right-10 w-32 h-32 bg-[#3B82F6]/10 rounded-full blur-2xl" />
       <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-[#22C55E]/10 rounded-full blur-xl" />
-      
+
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         {/* Section Header */}
         <div className="text-center mb-10">
@@ -34,7 +34,7 @@ export function FeaturedVideoSection() {
         <div className="relative max-w-4xl mx-auto">
           {/* Decorative frame */}
           <div className="absolute -inset-3 md:-inset-4 bg-gradient-to-br from-[#F97316] via-[#3B82F6] to-[#22C55E] rounded-3xl md:rounded-[2rem] opacity-20 blur-sm" />
-          
+
           <div className="relative bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden border-4 border-white">
             {videoSrc ? (
               <video
@@ -61,17 +61,17 @@ export function FeaturedVideoSection() {
                     priority
                   />
                 </div>
-                
+
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                
+
                 {/* Play button */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                   <div className="w-20 h-20 md:w-24 md:h-24 bg-[#F97316] rounded-full flex items-center justify-center shadow-lg shadow-[#F97316]/30 group-hover:scale-110 transition-transform">
                     <Play className="w-8 h-8 md:w-10 md:h-10 text-white ml-1" fill="white" />
                   </div>
                 </div>
-                
+
                 {/* Bottom text */}
                 <div className="absolute bottom-4 md:bottom-6 left-0 right-0 text-center">
                   <p className="text-white font-bold text-lg md:text-xl drop-shadow-lg">

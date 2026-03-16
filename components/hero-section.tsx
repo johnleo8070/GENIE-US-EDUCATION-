@@ -10,7 +10,7 @@ export function HeroSection() {
   const [isVideoFinished, setIsVideoFinished] = useState(false)
 
   // Replace this with your actual video path when ready
-  const videoSrc = "/videos/GENIE-US!.mp4"
+  const videoSrc = "/videos/genie-us.mp4"
 
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#E0E7FF] via-[#C7D2FE] to-[#E0E7FF]">
