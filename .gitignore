@@ -8,6 +8,3 @@ node_modules/
 .next/
 .env*.local
 .DS_Store
-
-# Large media files
-public/videos/*.mp4
