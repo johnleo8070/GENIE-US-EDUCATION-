@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { createClient } from "@/lib/supabase/client"
 import { Sparkles, Mail, Lock, Eye, EyeOff, CheckCircle } from "lucide-react"
 
-export default function LoginPage() {
+function LoginContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [email, setEmail] = useState("")
@@ -18,12 +18,12 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState<string | null>(null)
-  
+
   useEffect(() => {
     // Check for URL parameters
     const errorParam = searchParams.get("error")
     const confirmedParam = searchParams.get("confirmed")
-    
+
     if (errorParam) {
       setError(decodeURIComponent(errorParam))
     }
@@ -38,7 +38,7 @@ export default function LoginPage() {
     setError(null)
 
     const supabase = createClient()
-    
+
     const { data, error: authError } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -112,7 +112,7 @@ export default function LoginPage() {
               {success}
             </div>
           )}
-          
+
           {error && (
             <div className="bg-red-100 border border-red-300 text-red-700 px-4 py-3 rounded-xl mb-4 text-sm">
               {error}
@@ -181,7 +181,7 @@ export default function LoginPage() {
               Parents can create accounts and add children from the Dashboard. After signing up, check your email for confirmation.
             </p>
           </div>
-          
+
           {/* Child login link */}
           <div className="mt-4 text-center">
             <p className="text-muted-foreground text-sm">
@@ -191,7 +191,7 @@ export default function LoginPage() {
               </Link>
             </p>
           </div>
-          
+
           {/* Forgot password link */}
           <div className="mt-3 text-center">
             <Link href="/auth/forgot-password" className="text-sm text-muted-foreground hover:text-primary transition-colors">
@@ -214,5 +214,13 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary" /></div>}>
+      <LoginContent />
+    </Suspense>
   )
 }

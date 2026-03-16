@@ -1,12 +1,13 @@
 "use client"
 
+import { Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Mail, Sparkles, GraduationCap, Users } from "lucide-react"
 
-export default function SignUpSuccessPage() {
+function SignUpSuccessContent() {
   const searchParams = useSearchParams()
   const type = searchParams.get("type") || "parent"
   const isStudent = type === "student"
@@ -46,13 +47,13 @@ export default function SignUpSuccessPage() {
               <Users className="w-10 h-10 text-green-600" />
             )}
           </div>
-          
+
           <h1 className="text-2xl font-display font-bold text-foreground mb-2">
             {isStudent ? "Welcome, Future Genius!" : "Check Your Email!"}
           </h1>
           <p className="text-muted-foreground mb-6">
-            We&apos;ve sent a confirmation link to your email address. 
-            {isStudent 
+            We&apos;ve sent a confirmation link to your email address.
+            {isStudent
               ? " Click the link to activate your student account and start your learning adventure!"
               : " Please click the link to activate your account and set up your child's learning journey!"}
           </p>
@@ -87,5 +88,13 @@ export default function SignUpSuccessPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function SignUpSuccessPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary" /></div>}>
+      <SignUpSuccessContent />
+    </Suspense>
   )
 }
