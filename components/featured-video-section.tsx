@@ -6,7 +6,7 @@ import { Play, Sparkles } from "lucide-react"
 export function FeaturedVideoSection() {
   // Replace this with your actual video path when ready
   // Example: const videoSrc = "/videos/professor-panda-intro.mp4"
-  const videoSrc = "/videos/genie-us.mp4"
+  const videoSrc: string | null = null
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-[#FFF8E7] to-white relative overflow-hidden">
