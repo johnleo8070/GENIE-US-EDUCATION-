@@ -11,21 +11,20 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-[#F97316] flex items-center justify-center">
-                <span className="text-xl font-display font-bold text-white">G</span>
-              </div>
-              <span className="text-xl font-display font-bold text-foreground">GENIE-US</span>
+              <Image
+                src="/images/genie-us-logo.jpg"
+                alt="GENIE-US - Learning is Magic!"
+                width={120}
+                height={120}
+                className="w-[70px] h-[70px] md:w-[90px] md:h-[90px] lg:w-[110px] lg:h-[110px] object-contain drop-shadow-lg rounded-xl"
+                priority
+                loading="eager"
+              />
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
               Making learning fun and engaging for children aged 2-7.
             </p>
-            <Image
-              src="/images/professor-panda.jpg"
-              alt="Professor Panda"
-              width={80}
-              height={80}
-              className="w-20 h-20 object-contain"
-            />
+           
           </div>
 
           {/* Learning */}

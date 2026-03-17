@@ -7,7 +7,7 @@ import { ChevronRight, Play, X, Sparkles, BookOpen, Calculator, Microscope, Code
 import Image from "next/image"
 
 export function HeroSection() {
-  const [isVideoFinished, setIsVideoFinished] = useState(false)
+  const [isVideoFinished, setIsVideoFinished] = useState(true)
 
   // Replace this with your actual video path when ready
   const videoSrc = "/videos/genie-us.mp4"
@@ -66,12 +66,12 @@ export function HeroSection() {
             <div
               className="relative bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden border-4 border-white group"
             >
-              {videoSrc && !isVideoFinished ? (
+              {!isVideoFinished && videoSrc ? (
                 <video
                   src={videoSrc}
                   className="w-full aspect-[16/9] md:aspect-[21/10] lg:aspect-[21/9] object-cover"
-                  autoPlay
                   controls
+                  autoPlay
                   playsInline
                   onEnded={() => setIsVideoFinished(true)}
                 />
@@ -104,7 +104,7 @@ export function HeroSection() {
 
                   {/* Bottom label */}
                   <div className="absolute bottom-6 md:bottom-10 left-0 right-0 text-center">
-                    <p className="text-white font-bold text-xl md:text-2xl lg:text-3xl drop-shadow-lg">
+                    <p className="text-[#F97316] font-display font-bold text-2xl md:text-3xl lg:text-5xl drop-shadow-lg">
                       Watch Introduction
                     </p>
                     <p className="text-white/80 text-sm md:text-base drop-shadow-md mt-2">
