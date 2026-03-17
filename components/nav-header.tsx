@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { User, Menu, X, LogOut, LayoutDashboard, ChevronDown, BookOpen, Calculator, Atom, Code, Music } from "lucide-react"
+import { User, Menu, X, LogOut, LayoutDashboard, ChevronDown, BookOpen, Calculator, Atom, Code, Music, MessageSquare } from "lucide-react"
 import { useState, useEffect } from "react"
 import { createClient } from "@/lib/supabase/client"
 import type { User as SupabaseUser } from "@supabase/supabase-js"
@@ -13,45 +13,53 @@ interface NavHeaderProps {
 }
 
 const subjects = [
-  { 
-    name: "English", 
-    href: "/subjects/english", 
+  {
+    name: "English",
+    href: "/subjects/english",
     icon: BookOpen,
     color: "text-pink-500",
     bgColor: "bg-pink-100",
     description: "ABC, Reading & Writing"
   },
-  { 
-    name: "Maths", 
-    href: "/subjects/maths", 
+  {
+    name: "Maths",
+    href: "/subjects/maths",
     icon: Calculator,
     color: "text-amber-500",
     bgColor: "bg-amber-100",
     description: "Numbers & Counting"
   },
-  { 
-    name: "Science", 
-    href: "/subjects/science", 
+  {
+    name: "Science",
+    href: "/subjects/science",
     icon: Atom,
     color: "text-green-500",
     bgColor: "bg-green-100",
     description: "Nature & Discovery"
   },
-  { 
-    name: "Coding", 
-    href: "/subjects/coding", 
+  {
+    name: "Coding",
+    href: "/subjects/coding",
     icon: Code,
     color: "text-blue-500",
     bgColor: "bg-blue-100",
     description: "Logic & Programming"
   },
-  { 
-    name: "Music", 
-    href: "/subjects/music", 
+  {
+    name: "Music",
+    href: "/subjects/music",
     icon: Music,
     color: "text-orange-500",
     bgColor: "bg-orange-100",
     description: "Sounds & Rhythm"
+  },
+  {
+    name: "Public Speaking",
+    href: "/subjects/public-speaking",
+    icon: MessageSquare,
+    color: "text-red-500",
+    bgColor: "bg-red-100",
+    description: "Confidence & Expression"
   },
 ]
 
@@ -96,9 +104,9 @@ export function NavHeader({ className }: NavHeaderProps) {
             >
               Home
             </Link>
-            
+
             {/* Subjects Dropdown */}
-            <div 
+            <div
               className="relative"
               onMouseLeave={() => setShowSubjectsMenu(false)}
             >
@@ -109,7 +117,7 @@ export function NavHeader({ className }: NavHeaderProps) {
                 Subjects
                 <ChevronDown className={cn("w-4 h-4 transition-transform", showSubjectsMenu && "rotate-180")} />
               </button>
-              
+
               {showSubjectsMenu && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-10 pt-2 z-50">
                   <div className="bg-white rounded-2xl shadow-xl p-3 min-w-[280px] animate-slide-up">
@@ -147,21 +155,21 @@ export function NavHeader({ className }: NavHeaderProps) {
                 </div>
               )}
             </div>
-            
+
             <Link
               href="/worksheets"
               className="px-5 py-2 rounded-full text-sm font-semibold text-foreground/80 hover:bg-primary/10 hover:text-primary transition-all"
             >
               Worksheets
             </Link>
-            
+
             <Link
               href="/games/coding"
               className="px-5 py-2 rounded-full text-sm font-semibold text-foreground/80 hover:bg-primary/10 hover:text-primary transition-all"
             >
               Coding Game
             </Link>
-            
+
             {user ? (
               <div className="relative">
                 <button
@@ -171,7 +179,7 @@ export function NavHeader({ className }: NavHeaderProps) {
                   <User className="w-4 h-4" />
                   {user.user_metadata?.full_name?.split(' ')[0] || 'Account'}
                 </button>
-                
+
                 {showUserMenu && (
                   <div className="absolute right-0 top-12 bg-white rounded-xl shadow-xl p-2 min-w-[180px] animate-slide-up">
                     <Link
@@ -215,10 +223,10 @@ export function NavHeader({ className }: NavHeaderProps) {
         {/* Mobile Header */}
         <div className="md:hidden flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            
+
           </Link>
-          
-          <button 
+
+          <button
             className="p-2 rounded-full bg-white/90 shadow-md"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
@@ -232,14 +240,14 @@ export function NavHeader({ className }: NavHeaderProps) {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-20 left-4 right-4 bg-white rounded-2xl shadow-xl p-4 z-50 animate-slide-up max-h-[80vh] overflow-y-auto">
           <div className="flex flex-col gap-2">
-            <Link 
+            <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full rounded-xl py-3 px-4 font-semibold text-foreground/80 hover:bg-primary/10 transition-all text-center"
             >
               Home
             </Link>
-            
+
             {/* Mobile Subjects Section */}
             <div className="border-t border-gray-100 pt-2 mt-1">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-4 py-2">Subjects</p>
@@ -260,16 +268,16 @@ export function NavHeader({ className }: NavHeaderProps) {
                 })}
               </div>
             </div>
-            
+
             <div className="border-t border-gray-100 pt-2 mt-1">
-              <Link 
+              <Link
                 href="/worksheets"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full rounded-xl py-3 px-4 font-semibold text-foreground/80 hover:bg-primary/10 transition-all text-center block"
               >
                 Worksheets
               </Link>
-              <Link 
+              <Link
                 href="/games/coding"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full rounded-xl py-3 px-4 font-semibold text-foreground/80 hover:bg-primary/10 transition-all text-center block"
@@ -277,10 +285,10 @@ export function NavHeader({ className }: NavHeaderProps) {
                 Coding Game
               </Link>
             </div>
-            
+
             {user ? (
               <>
-                <Link 
+                <Link
                   href={user.user_metadata?.role === 'student' ? '/dashboard/kids' : '/parent/dashboard'}
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full rounded-xl py-3 px-4 font-semibold bg-primary/10 text-primary text-center mt-2 flex items-center justify-center gap-2"
@@ -288,7 +296,7 @@ export function NavHeader({ className }: NavHeaderProps) {
                   <LayoutDashboard className="w-4 h-4" />
                   {user.user_metadata?.role === 'student' ? 'My Learning' : 'Dashboard'}
                 </Link>
-                <button 
+                <button
                   onClick={() => {
                     handleLogout()
                     setMobileMenuOpen(false)
@@ -301,15 +309,15 @@ export function NavHeader({ className }: NavHeaderProps) {
               </>
             ) : (
               <div className="flex flex-col gap-2 mt-2">
-                <Link 
-                  href="/auth/sign-up" 
+                <Link
+                  href="/auth/sign-up"
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full rounded-xl py-3 px-4 font-semibold border-2 border-[#F97316] text-[#F97316] text-center"
                 >
                   Sign Up
                 </Link>
-                <Link 
-                  href="/auth/login" 
+                <Link
+                  href="/auth/login"
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full rounded-xl py-3 px-4 font-semibold bg-[#F97316] text-white text-center"
                 >

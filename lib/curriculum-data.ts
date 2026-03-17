@@ -803,6 +803,59 @@ export const musicCurriculum: Subject = {
   ]
 }
 
+// Public Speaking Curriculum
+export const publicSpeakingCurriculum: Subject = {
+  id: "public-speaking",
+  name: "Public Speaking",
+  slug: "public-speaking",
+  description: "Learn to speak with confidence and share your ideas!",
+  icon: "MessageSquare",
+  color: "#E74C3C",
+  gradientFrom: "#E74C3C",
+  gradientTo: "#C0392B",
+  levels: [
+    {
+      id: "ps-level-1",
+      title: "Level 1",
+      description: "Young Orators",
+      ageRange: "4-7 years",
+      modules: [
+        {
+          id: "ps-l1-m1",
+          title: "Showing Confidence",
+          description: "Learn to stand tall and speak up",
+          icon: "Smile",
+          color: "#E74C3C",
+          unlocked: true,
+          lessons: [
+            {
+              id: "ps-l1-m1-lesson1",
+              title: "The Magic Power of Eye Contact",
+              description: "Learn why looking at your audience is important",
+              thumbnail: "/images/lessons/eye-contact.jpg",
+              duration: "5 min",
+              rewardStars: 3,
+              rewardBadge: "Confident Speaker",
+              activities: [
+                {
+                  id: "act1",
+                  type: "multiple-choice",
+                  question: "Where should you look when talking to a friend?",
+                  options: [
+                    { id: "floor", label: "The floor", correct: false },
+                    { id: "eyes", label: "Their eyes", correct: true },
+                    { id: "ceiling", label: "The ceiling", correct: false },
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
 // All subjects combined
 export const allSubjects: Subject[] = [
   englishCurriculum,
@@ -810,6 +863,7 @@ export const allSubjects: Subject[] = [
   scienceCurriculum,
   codingCurriculum,
   musicCurriculum,
+  publicSpeakingCurriculum,
 ]
 
 // Helper function to get subject by slug
@@ -821,7 +875,7 @@ export function getSubjectBySlug(slug: string): Subject | undefined {
 export function getLesson(subjectSlug: string, lessonId: string): Lesson | undefined {
   const subject = getSubjectBySlug(subjectSlug)
   if (!subject) return undefined
-  
+
   for (const level of subject.levels) {
     for (const module of level.modules) {
       const lesson = module.lessons.find(l => l.id === lessonId)

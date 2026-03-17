@@ -6,30 +6,35 @@ import Image from "next/image"
 import { ChevronRight } from "lucide-react"
 
 const subjects = [
-  { 
-    name: "English", 
+  {
+    name: "English",
     href: "/subjects/english",
     image: "/images/subject-english.jpg",
   },
-  { 
-    name: "Maths", 
+  {
+    name: "Maths",
     href: "/subjects/maths",
     image: "/images/subject-maths.jpg",
   },
-  { 
-    name: "Science", 
+  {
+    name: "Science",
     href: "/subjects/science",
     image: "/images/subject-science.jpg",
   },
-  { 
-    name: "Coding", 
+  {
+    name: "Coding",
     href: "/subjects/coding",
     image: "/images/subject-coding.jpg",
   },
-  { 
-    name: "Music", 
+  {
+    name: "Music",
     href: "/subjects/music",
     image: "/images/subject-music.jpg",
+  },
+  {
+    name: "Public Speaking",
+    href: "/subjects/public-speaking",
+    image: "/images/subject-public-speaking.jpg",
   },
 ]
 
@@ -45,10 +50,10 @@ export function VideoLessonsSection() {
         </div>
 
         {/* Subject Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 mb-8">
           {subjects.map((subject, index) => (
             <Link key={subject.name} href={subject.href}>
-              <div 
+              <div
                 className="group relative flex flex-col items-center"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -63,7 +68,7 @@ export function VideoLessonsSection() {
                   />
                   {/* Glow effect on hover */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-white/20 via-transparent to-white/10 pointer-events-none" />
-                  
+
                   {/* Sparkle decoration on hover */}
                   <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <svg className="w-6 h-6 text-yellow-300 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
@@ -84,8 +89,8 @@ export function VideoLessonsSection() {
         {/* CTA Button */}
         <div className="flex justify-center">
           <Link href="/subjects">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="rounded-full px-8 py-6 text-lg font-bold bg-[#F97316] hover:bg-[#EA580C] text-white shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95"
             >
               View More Lessons

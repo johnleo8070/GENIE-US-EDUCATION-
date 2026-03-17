@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ChevronRight, Play, X, Sparkles, BookOpen, Calculator, Microscope, Code, Music, Star, Shield, Heart } from "lucide-react"
+import { ChevronRight, Play, X, Sparkles, BookOpen, Calculator, Microscope, Code, Music, Star, Shield, Heart, MessageSquare } from "lucide-react"
 import Image from "next/image"
 
 export function HeroSection() {
@@ -103,8 +103,8 @@ export function HeroSection() {
                   </div>
 
                   {/* Bottom label */}
-                  <div className="absolute bottom-6 md:bottom-10 left-0 right-0 text-center">
-                    <p className="text-[#F97316] font-display font-bold text-2xl md:text-3xl lg:text-5xl drop-shadow-lg">
+                  <div className="absolute bottom-[-16px] md:bottom-10 left-0 right-0 text-center">
+                    <p className="text-[#F97316] font-display font-bold text-lg md:text-3xl lg:text-5xl drop-shadow-lg">
                       Watch Introduction
                     </p>
                     <p className="text-white/80 text-sm md:text-base drop-shadow-md mt-2">
@@ -152,6 +152,9 @@ export function HeroSection() {
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pink-100 text-pink-700 rounded-full text-xs md:text-sm font-semibold">
                 <Music className="w-3.5 h-3.5" /> Music
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-red-100 text-red-700 rounded-full text-xs md:text-sm font-semibold">
+                <MessageSquare className="w-3.5 h-3.5" /> Public Speaking
               </span>
             </div>
 

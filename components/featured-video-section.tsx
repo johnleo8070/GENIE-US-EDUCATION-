@@ -77,8 +77,8 @@ export function FeaturedVideoSection() {
                 </div>
 
                 {/* Bottom text */}
-                <div className="absolute bottom-6 md:bottom-10 left-0 right-0 text-center">
-                  <p className="text-[#F97316] font-display font-bold text-2xl md:text-3xl lg:text-4xl drop-shadow-lg">
+                <div className="absolute bottom-[-16px] md:bottom-10 left-0 right-0 text-center">
+                  <p className="text-[#F97316] font-display font-bold text-lg md:text-2xl lg:text-4xl drop-shadow-lg">
                     Watch Now
                   </p>
                   <p className="text-white/80 text-sm md:text-base drop-shadow-md mt-2">
