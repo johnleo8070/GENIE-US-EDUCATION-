@@ -215,10 +215,7 @@ export function NavHeader({ className }: NavHeaderProps) {
         {/* Mobile Header */}
         <div className="md:hidden flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-              <span className="text-xl font-display font-bold text-primary-foreground">G</span>
-            </div>
-            <span className="text-xl font-display font-bold text-foreground">GENIE-US</span>
+            
           </Link>
           
           <button 
