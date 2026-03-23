@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { Mail, Smartphone } from "lucide-react"
 
 export function Footer() {
   return (
@@ -21,10 +22,25 @@ export function Footer() {
                 loading="eager"
               />
             </Link>
-            <p className="text-sm text-muted-foreground mb-4">
+            <p className="text-sm text-muted-foreground mb-6">
               Making learning fun and engaging for children aged 2-7.
             </p>
-           
+            <div className="space-y-3">
+              <a
+                href="mailto:info@genie-us.education"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[#F97316] transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                info@genie-us.education
+              </a>
+              <a
+                href="tel:+2348090585858"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[#F97316] transition-colors"
+              >
+                <Smartphone className="w-4 h-4" />
+                +234-809-058-5858
+              </a>
+            </div>
           </div>
 
           {/* Learning */}
@@ -70,9 +86,9 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             Made with love for young learners everywhere
           </p>
-          <a 
-            href="https://gstatmobile.com" 
-            target="_blank" 
+          <a
+            href="https://gstatmobile.com"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-semibold text-[#F97316] hover:text-[#EA580C] transition-colors"
           >

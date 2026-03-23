@@ -7,8 +7,27 @@ import { ProfessorPanda } from "@/components/professor-panda"
 import { Button } from "@/components/ui/button"
 import { StarRating } from "@/components/star-rating"
 import { cn } from "@/lib/utils"
-import { getSubjectBySlug, getLesson } from "@/lib/curriculum-data"
+import { getSubjectBySlug, getLesson, allSubjects } from "@/lib/curriculum-data"
 import type { Activity, ActivityOption } from "@/lib/curriculum-data"
+
+export function generateStaticParams() {
+  const params: { subject: string; lessonId: string }[] = []
+
+  allSubjects.forEach(subject => {
+    subject.levels.forEach(level => {
+      level.modules.forEach(module => {
+        module.lessons.forEach(lesson => {
+          params.push({
+            subject: subject.slug,
+            lessonId: lesson.id
+          })
+        })
+      })
+    })
+  })
+
+  return params
+}
 import {
   ArrowLeft,
   ArrowRight,
