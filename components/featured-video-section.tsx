@@ -8,7 +8,7 @@ export function FeaturedVideoSection() {
   const [isPlaying, setIsPlaying] = useState(false)
 
   // Replace this with your actual video path when ready
-  const videoSrc = "https://www.youtube.com/embed/KtkHxIrhJgY?autoplay=1&rel=0"
+  const videoSrc = "https://www.youtube.com/embed/rFqxN1eHb4g?autoplay=1&rel=0"
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-[#FFF8E7] to-white relative overflow-hidden">
