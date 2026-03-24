@@ -10,7 +10,7 @@ export function HeroSection() {
   const [isVideoFinished, setIsVideoFinished] = useState(true)
 
   // Replace this with your actual video path when ready
-  const videoSrc = "/videos/genie-us.mp4"
+  const videoSrc = "https://www.youtube.com/embed/KtkHxIrhJgY?autoplay=1&rel=0"
 
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#E0E7FF] via-[#C7D2FE] to-[#E0E7FF]">
@@ -67,13 +67,11 @@ export function HeroSection() {
               className="relative bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden border-4 border-white group"
             >
               {!isVideoFinished && videoSrc ? (
-                <video
+                <iframe
                   src={videoSrc}
                   className="w-full aspect-[16/9] md:aspect-[21/10] lg:aspect-[21/9] object-cover"
-                  controls
-                  autoPlay
-                  playsInline
-                  onEnded={() => setIsVideoFinished(true)}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
                 />
               ) : (
                 <div

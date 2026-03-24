@@ -8,7 +8,7 @@ export function FeaturedVideoSection() {
   const [isPlaying, setIsPlaying] = useState(false)
 
   // Replace this with your actual video path when ready
-  const videoSrc = "/videos/genie-us(2).mp4"
+  const videoSrc = "https://www.youtube.com/embed/KtkHxIrhJgY?autoplay=1&rel=0"
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-[#FFF8E7] to-white relative overflow-hidden">
@@ -39,16 +39,12 @@ export function FeaturedVideoSection() {
 
           <div className="relative bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden border-4 border-white">
             {isPlaying && videoSrc ? (
-              <video
+              <iframe
+                src={videoSrc}
                 className="w-full aspect-video object-cover"
-                autoPlay
-                controls
-                playsInline
-                onEnded={() => setIsPlaying(false)}
-              >
-                <source src={videoSrc} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             ) : (
               /* Playback Trigger / Thumbnail */
               <div
