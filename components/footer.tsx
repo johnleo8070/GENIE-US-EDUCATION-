@@ -47,11 +47,12 @@ export function Footer() {
           <div>
             <h4 className="font-display font-bold text-foreground mb-4">Learning</h4>
             <ul className="space-y-2">
-              <li><Link href="/classroom?subject=english" className="text-sm text-muted-foreground hover:text-[#F97316] transition-colors">English</Link></li>
-              <li><Link href="/classroom?subject=maths" className="text-sm text-muted-foreground hover:text-[#F97316] transition-colors">Maths</Link></li>
-              <li><Link href="/classroom?subject=science" className="text-sm text-muted-foreground hover:text-[#F97316] transition-colors">Science</Link></li>
-              <li><Link href="/games/coding" className="text-sm text-muted-foreground hover:text-[#F97316] transition-colors">Coding</Link></li>
-              <li><Link href="/classroom?subject=music" className="text-sm text-muted-foreground hover:text-[#F97316] transition-colors">Music</Link></li>
+              <li><Link href="/subjects/english" className="text-sm text-muted-foreground hover:text-[#F97316] transition-colors">English</Link></li>
+              <li><Link href="/subjects/maths" className="text-sm text-muted-foreground hover:text-[#F97316] transition-colors">Maths</Link></li>
+              <li><Link href="/subjects/science" className="text-sm text-muted-foreground hover:text-[#F97316] transition-colors">Science</Link></li>
+              <li><Link href="/subjects/coding" className="text-sm text-muted-foreground hover:text-[#F97316] transition-colors">Coding</Link></li>
+              <li><Link href="/subjects/music" className="text-sm text-muted-foreground hover:text-[#F97316] transition-colors">Music</Link></li>
+              <li><Link href="/subjects/public-speaking" className="text-sm text-muted-foreground hover:text-[#F97316] transition-colors">Public Speaking</Link></li>
             </ul>
           </div>
 
