@@ -1,0 +1,14 @@
+{
+    "redirects": [
+        {
+            "source": "/cpanel",
+            "destination": "https://cpanel.genie-us.education/",
+            "permanent": true
+        },
+        {
+            "source": "/webmail",
+            "destination": "https://webmail.genie-us.education/",
+            "permanent": true
+        }
+    ]
+}
