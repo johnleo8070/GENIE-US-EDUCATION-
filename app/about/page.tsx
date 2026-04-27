@@ -17,8 +17,7 @@ import {
     Target,
     Trophy,
     MessageSquare,
-    Mail,
-    Smartphone
+    Mail
 } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -301,7 +300,7 @@ export default function AboutPage() {
                         <h2 className="font-display text-3xl md:text-5xl font-bold text-gray-900 mb-4">Get in Touch</h2>
                         <p className="text-lg text-gray-600 font-sans">Have questions? We're here to help you and your child on this magical journey!</p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 max-w-xl mx-auto gap-6">
                         <a href="mailto:info@genie-us.education" className="flex items-center gap-6 p-8 bg-white rounded-3xl shadow-sm border border-orange-100 hover:shadow-md hover:scale-[1.02] transition-all group">
                             <div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center shrink-0">
                                 <Mail className="w-7 h-7 text-[#F97316]" />
@@ -309,15 +308,6 @@ export default function AboutPage() {
                             <div>
                                 <p className="text-xs text-orange-400 font-bold uppercase tracking-wider mb-1">Email Us</p>
                                 <p className="text-xl font-bold text-gray-900 group-hover:text-[#F97316] transition-colors">info@genie-us.education</p>
-                            </div>
-                        </a>
-                        <a href="tel:+2348090585858" className="flex items-center gap-6 p-8 bg-white rounded-3xl shadow-sm border border-green-100 hover:shadow-md hover:scale-[1.02] transition-all group">
-                            <div className="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center shrink-0">
-                                <Smartphone className="w-7 h-7 text-green-600" />
-                            </div>
-                            <div>
-                                <p className="text-xs text-green-400 font-bold uppercase tracking-wider mb-1">Call Us</p>
-                                <p className="text-xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">+234-809-058-5858</p>
                             </div>
                         </a>
                     </div>

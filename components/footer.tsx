@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Mail, Smartphone } from "lucide-react"
+import { Mail } from "lucide-react"
 
 export function Footer() {
   return (
@@ -32,13 +32,6 @@ export function Footer() {
               >
                 <Mail className="w-4 h-4" />
                 info@genie-us.education
-              </a>
-              <a
-                href="tel:+2348090585858"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[#F97316] transition-colors"
-              >
-                <Smartphone className="w-4 h-4" />
-                +234-809-058-5858
               </a>
             </div>
           </div>

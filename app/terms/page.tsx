@@ -17,7 +17,6 @@ import {
     Mail,
     CheckSquare,
     Clock,
-    Smartphone,
     Globe
 } from 'lucide-react'
 
@@ -138,7 +137,6 @@ const termsSections = [
         content: "If you have any questions about these Terms, please contact us:",
         contact: {
             email: "info@genie-us.education",
-            phone: "+234-809-058-5858",
             website: "https://genie-us.education"
         }
     },
@@ -229,19 +227,12 @@ export default function TermsPage() {
                                         )}
 
                                         {section.contact && (
-                                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                                                 <a href={`mailto:${section.contact.email}`} className="flex items-center gap-3 p-4 bg-orange-50 rounded-2xl border border-orange-100 group transition-colors hover:bg-orange-100">
                                                     <Mail className="w-5 h-5 text-[#F97316]" />
                                                     <div>
                                                         <p className="text-xs text-orange-400 font-bold uppercase tracking-tight">Email</p>
                                                         <p className="text-orange-900 font-bold text-sm truncate">{section.contact.email}</p>
-                                                    </div>
-                                                </a>
-                                                <a href={`tel:${section.contact.phone.replace(/ /g, '')}`} className="flex items-center gap-3 p-4 bg-green-50 rounded-2xl border border-green-100 group transition-colors hover:bg-green-100">
-                                                    <Smartphone className="w-5 h-5 text-green-600" />
-                                                    <div>
-                                                        <p className="text-xs text-green-400 font-bold uppercase tracking-tight">Phone</p>
-                                                        <p className="text-green-900 font-bold text-sm truncate">{section.contact.phone}</p>
                                                     </div>
                                                 </a>
                                                 <a href={section.contact.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-gray-50 rounded-2xl border border-gray-100 group transition-colors hover:bg-gray-100">
